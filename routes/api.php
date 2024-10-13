@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', 'Api\UserController@index')->name('user.index');
-Route::get('/','HomeController@index');
+Route::get('/ef/','TestController@index');
