@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', 'Api\UserController@index')->name('user.index');
+Route::post('/ef/login', 'api\AuthController@login');
 Route::get('/ef/','TestController@index');
