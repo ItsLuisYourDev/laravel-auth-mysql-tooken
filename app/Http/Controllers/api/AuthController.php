@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class AuthController extends Controller
@@ -23,11 +24,19 @@ class AuthController extends Controller
         }
 
         // Crear un token para el usuario
-        // $token = $user->createToken('API Token')->plainTextToken;
+        $token = $user->createToken('API Token')->plainTextToken;
 
         return response()->json([
             'user' => $user,
-            'token' => 'mitoken',
+            'token' => $token,
         ]);
+    }
+
+        public function logout(Request $request)
+    {
+        // Revocar el token
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json(['message' => 'Cierre de sesión exitoso']);
     }
 }
