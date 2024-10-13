@@ -20,5 +20,6 @@ Route::get('/ef/','TestController@index');
 Route::post('/ef/login', 'api\AuthController@login');
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('ef/panel', 'EduFinancieraController@index')->name('ef.panel');
+    Route::post('/ef/categorias', 'api\AuthController@logout');
     Route::post('/ef/logout', 'api\AuthController@logout');
 });
