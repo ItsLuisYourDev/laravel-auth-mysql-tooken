@@ -1,0 +1,41 @@
+[
+    {
+        "section":{
+            "img":"img/home/home1.png",
+            "link":"",
+            "resume":[
+                {"p":"Con el propósito de apoyar en la formación de conocimientos  en el campo financiero, hemos creado nuestro \"Programa de Educación Financiera\""},
+                {"p":"para que clientes y público en general puedan tomar mejores decisiones de carácter económico para su vida cotidiana."}
+            ]
+        }
+    },
+    {
+        "section":{
+            "img":"img/home/home2.png",
+            "link":"",
+            "resume":[
+                {"p":"Aunque la formalidad de las oficinas bancarias pueda ser intimidante, los bancos ofrecen varias maneras de mejorar nuestras condiciones económicas." }
+            ]
+        }
+    },
+    {
+        "section":{
+            "img":"img/home/home3.png",
+            "link":"",
+            "resume":""
+        }
+    },{
+        "section4":{
+            "img":"img/home/home4.png",
+            "link":"",
+            "resume":""
+        }
+    },
+    {
+        "section":{
+            "img":"img/home/home5.png",
+            "link":"",
+            "resume":""
+        }
+    }
+]

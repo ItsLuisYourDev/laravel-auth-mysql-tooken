@@ -1,0 +1,46 @@
+<!-- <header>
+  <div class="container">
+    <div class="col-xs-6 col-sm-6">
+        <a ui-sref="index" ><img ng-src="img/utils/logo.png" alt="" class="img-responsive"/></a>
+    </div>
+    <div class="col-xs-6 col-sm-6 column-2">
+    	<span class="span1">Programa de</span><br>
+    	<span class="span2">Educación Financiera BCM</span>       
+    </div>
+</div>
+</header> -->
+
+<header ng-controller="HeaderCtrl" class="affix">
+	<div class="container">
+		<div class="col-xs-12 col-md-6 col-sm-6 col-xs-6 text-left">
+			<a href="http://www.bcmanabi.com/" target="_blank" title="Banco Comercial de Manabí"><img ng-src="img/utils/logo.png" alt="" class=""/></a>
+		</div>
+		<div class="col-xs-12 col-md-6 col-sm-6 col-xs-6 text-right navicon">
+		<img src="img/utils/programa_Edu_financiera_logo.png" title="Programa de Educación Financiera" class="pull-right hidden-xs">
+			<!-- <span class="span1 hidden-xs">Programa de</span><br>
+			<span class="span2 hidden-xs">Educación Financiera BCM</span>  -->    
+			<a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
+		</div>
+	</div>
+
+	<div class="overlay overlay-boxify">
+	<div class="container overlay-icon">
+	 	<a href="http://www.bcmanabi.com/" target="_blank"><img ng-src="img/utils/logo_footer.png" alt="" class="img-responsive"/></a>
+	</div>
+			<nav>
+				<ul class="overlay-menu-1">
+					<li><a ui-sref="index"><i class="icon-inicio"></i>Inicio</a></li>
+					<li><a ui-sref="bancos"><i class="icon-bancos"></i>Bancos <br>¿Qué son?<br>¿Cómo funcionan?</a></li>
+					<li><a ui-sref="productos_servicios"><i class="icon-produc_servicio"></i>Bancos <br>Productos<br>Servicios</a></li>
+				
+					<li><a ui-sref="medio_financiero"><i class="icon-intituciones"></i>Intituciones <br>Medio Financiero</a></li>
+					<li><a ui-sref="terminos_basicos"><i class="icon-terminos"></i></i>Glosario <br> de Términos</a></li>
+					<li><a ui-sref="simulador_credito"><i class="icon-calculadora"></i></i>Simulador <br> Créditos</a></li>
+					<li><a ui-sref="preguntas_frecuentes"><i class="bi bi-question-lg"></i></i>Preguntas <br> Frecuentes</a></li>
+				</ul>
+			</nav>
+		</div>
+</header>
+
+
+

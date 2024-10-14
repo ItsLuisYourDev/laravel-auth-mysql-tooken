@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+<body ng-controller="mainController">
+        <h1>Lista de Usuarios</h1>
+    <ul>
+        <li ng-repeat="usuario in usuarios">
+            {{ usuario.username }} - {{ usuario.email }}
+        </li>
+    </ul>
+    <div ng-controller="AdminCtrl">
+        <h1>Painel de Admin</h1>
+        <p>Contenido aquí...</p>
+    </div>
+</body>
+</html>
+
+<script src="js/admin.js"></script>

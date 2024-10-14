@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'edu';
+	src:url('fonts/icomoon.eot?ilnewh');
+	src:url('fonts/icomoon.eot?ilnewh#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?ilnewh') format('truetype'),
+		url('fonts/icomoon.woff?ilnewh') format('woff'),
+		url('fonts/icomoon.svg?ilnewh#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'edu' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-inicio:before {
+	content: "\e900";
+}
+.icon-bancos:before {
+	content: "\e901";
+}
+.icon-produc_servicio:before {
+	content: "\e902";
+}
+.icon-calculadora:before {
+	content: "\e903";
+}
+.icon-terminos:before {
+	content: "\e904";
+}
+.icon-intituciones:before {
+	content: "\e905";
+}
+

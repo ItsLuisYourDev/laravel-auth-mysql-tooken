@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Preguntas Frecuentes</title>
+        <style>
+            .question {
+                margin-bottom: 10px;
+                cursor: pointer;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .answer {
+                display: none; /* Escondemos la respuesta inicialmente */
+                padding: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+		<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                function toggleAnswer(questionElement) {
+                    const answer = questionElement.querySelector(".answer");
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                }
+
+                // Asignar el evento de clic a cada pregunta
+                const questions = document.querySelectorAll(".question");
+                questions.forEach(question => {
+                    question.addEventListener("click", () =>
+                        toggleAnswer(question)
+                    );
+                });
+            });
+        </script>
+        <div class="container">
+            <div class="col-sm-9 main-content">
+                <br /><br />
+                <div class="row" id="creditos">
+                    <section>
+                        <h1 class="heading">PREGUNTAS FRECUENTES</h1>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10">
+                                <div
+                                    class="row"
+                                    style="padding-top: 50px;"
+                                    id="preguntas"
+                                >
+                                    <section class="seccion_preguntas">
+                                        <div class="question">
+                                            <h3>¿Pregunta 1?</h3>
+                                            <div class="answer">
+                                                <p>Respuesta 1</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

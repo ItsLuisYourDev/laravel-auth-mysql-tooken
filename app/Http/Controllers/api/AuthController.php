@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Role;
 
 class AuthController extends Controller
 {
@@ -25,11 +26,27 @@ class AuthController extends Controller
 
         // Crear un token para el usuario
         $token = $user->createToken('API Token')->plainTextToken;
+        
+        $role = $user->roles()->first(); // Esto devuelve el primer rol asociado
+        if ($role) {
+            echo $role->name; // Imprimir el nombre del rol
+        }
+        // si el usuario no es efadmin
+        if(!$user ->hasRole('efadmin')){
+            return response()->json([
+                'user' => $user,
+                'token' => $token,
+                'role' => null
+            ]);
+        // si el usuario es efadmin
+        }else{
+            return response()->json([
+                'user' => $user,
+                'token' => $token,
+                'role' => $role -> name
+            ]);
+        }
 
-        return response()->json([
-            'user' => $user,
-            'token' => $token,
-        ]);
     }
 
         public function logout(Request $request)
