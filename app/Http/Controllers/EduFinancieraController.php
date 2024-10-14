@@ -21,7 +21,7 @@ class EduFinancieraController extends Controller
         $user = Auth::user();
         // Obtener los roles asociados a este usuario
         $roles = $user->roles;
-        echo($roles);
+        echo($roles[0]-> name);
 
         // $user = User::find(1); // Reemplaza 1 con el id del usuario que quieras probar
         // $roles = $user->roles;
