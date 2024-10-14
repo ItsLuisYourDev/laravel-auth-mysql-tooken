@@ -11,7 +11,7 @@ class EduFinancieraController extends Controller
 {
     //
     public function index(){
-        echo('eres admin');
+        // echo('eres admin');
         // $rol = Role::find(1);
         // echo($rol);
         // Obtener los roles asociados con un usuario
@@ -24,10 +24,10 @@ class EduFinancieraController extends Controller
         $role = $user->roles()->first(); // Esto devuelve el primer rol asociado
 
         if ($role) {
-            echo $role->name; // Imprimir el nombre del rol
+            // echo $role->name; // Imprimir el nombre del rol
         }
         if($user ->hasRole('efadmin')){
-            echo('el susuairo es adm');
+            // echo('el susuairo es adm');
         }
 
         // if (Auth::user()->hasRole('efadmin')) {
@@ -37,6 +37,10 @@ class EduFinancieraController extends Controller
         // $user = User::find(1); // Reemplaza 1 con el id del usuario que quieras probar
         // $roles = $user->roles;
         // echo($user);
+            return response()->json([
+                'success' => false,
+                'user' => $user
+            ]);
         
     }
 }

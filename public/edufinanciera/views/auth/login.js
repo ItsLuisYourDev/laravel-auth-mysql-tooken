@@ -12,6 +12,14 @@ app.controller('LoginController', function ($scope, $http) {
         password: $scope.password
         }).then(function (response) {
             console.log(response.data);
+        // Redirigir al panel dependiendo del rol
+        if (response.data.role === 'efadmin') {
+            window.location.href = '/edufinanciera/#!/admin'; // Ajusta según tu ruta
+            sessionStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.token);
+        } else {
+            window.location.href = '/user-panel'; // Ajusta según tu ruta
+        }
         }, function (error) {
             console.error('Error:', error);
         });
