@@ -21,8 +21,10 @@
     <script src="vendors/modernizr/modernizr.custom.js" type="text/javascript"></script>
 </head>
 <body ng-controller="mainController">
-<ng-include ng-if="!isAdminRoute()"  src="'views/template/header.html'"></ng-include>
-<ng-include ng-if="!isAdminRoute()" src="'views/template/mainmenu.html'"></ng-include>
+<ng-include src="'views/template/header.html'"></ng-include>
+<ng-include src="'views/template/mainmenu.html'"></ng-include>
+<!-- <ng-include ng-if="!isAdminRoute()"  src="'views/template/header.html'"></ng-include>
+<ng-include ng-if="!isAdminRoute()" src="'views/template/mainmenu.html'"></ng-include> -->
 <div ui-view ></div>
 <ng-include src="'views/template/footer.html'"></ng-include>
 <!--<ng-include src="'views/template/fixedmenu.html'"></ng-include>-->
