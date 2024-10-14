@@ -29,7 +29,7 @@ class AuthController extends Controller
         
         $role = $user->roles()->first(); // Esto devuelve el primer rol asociado
         if ($role) {
-            echo $role->name; // Imprimir el nombre del rol
+            // echo $role->name; // Imprimir el nombre del rol
         }
         // si el usuario no es efadmin
         if(!$user ->hasRole('efadmin')){
@@ -40,6 +40,11 @@ class AuthController extends Controller
             ]);
         // si el usuario es efadmin
         }else{
+//             return response()->json([
+//     'user' => $user,
+//     'token' => $token,
+//     'role' => $role->name
+// ], 200, ['Content-Type' => 'application/json']);
             return response()->json([
                 'user' => $user,
                 'token' => $token,

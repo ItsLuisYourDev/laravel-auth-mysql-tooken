@@ -11,8 +11,8 @@ class TestController extends Controller
     public function index(){
         $role = Role::find(1);
         $users = $role->users;
-        echo($role);
-        echo($users);
+        // echo($role);
+        // echo($users);
         $list = [
             'nombre' => 'luis'
         ];
