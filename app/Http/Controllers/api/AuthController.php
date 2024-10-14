@@ -21,7 +21,10 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['message' => 'Credenciales inválidas'], 401);
+            return response()->json([
+                'message' => 'Credenciales inválidas',
+                'success' => true
+            ], 401);
         }
 
         // Crear un token para el usuario
@@ -34,6 +37,7 @@ class AuthController extends Controller
         // si el usuario no es efadmin
         if(!$user ->hasRole('efadmin')){
             return response()->json([
+                'success' => false,
                 'user' => $user,
                 'token' => $token,
                 'role' => null
@@ -46,6 +50,7 @@ class AuthController extends Controller
 //     'role' => $role->name
 // ], 200, ['Content-Type' => 'application/json']);
             return response()->json([
+                'success' => true,
                 'user' => $user,
                 'token' => $token,
                 'role' => $role -> name
