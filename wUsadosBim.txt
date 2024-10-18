@@ -1,0 +1,12 @@
+viw| sleccionar palabra
+ciw| copiar palabra
+fX | ba a una palabra
+v + ib or ob| selecicona dentro o fuera de un ()
+vix|selecicona hasta el simbolo x
+cc| elimina toda linea inseertar|
+cntr +n| moner adelante autocoklpketado|
+qa| grabar macros
+cw o ce| remplazar ppel selecitor hsdts el final 
+J o gJ| unir linea siguiente con anterior
+asfajlfkjsad skflas flsd fks fppls f 
+hoal()

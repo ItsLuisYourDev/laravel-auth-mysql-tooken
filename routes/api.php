@@ -23,4 +23,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/ef/categorias', 'api\AuthController@logout');
     Route::post('/ef/contenidos', 'api\AuthController@logout');
     Route::post('/ef/logout', 'api\AuthController@logout');
+    Route::post('/ef/cadd','api\efCategoriaController@store');
 });
+Route::get('/ef/test','api\eduFinanciera\TestController@index');
+Route::get('/ef/c','api\efCategoriaController@index');
+echo("test");
+

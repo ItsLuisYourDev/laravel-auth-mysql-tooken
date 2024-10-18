@@ -1,0 +1,207 @@
+acceso directos:
+contr + tap| cambiar entre pestaña
+contr + 0  | para ir a los archivos
+contr + n  | crear un archivo nuevo
+contr + n  | crear una carpeta nueva
+contr + deleted| borra una palabre en insertar
+contr + spacio| autocompletar
+contr + shif + ñ| una nueva abri terminal
+contr + ñ abril terminal y cerrar
+contr + r rehacer
+U| una linea
+----en modo insertar
+contr + ox| para ingresar comando rapido del modo normal
+
+combianciones:
+ciw | para remplazar palabra and insercio
+dwi | para eliminar partpalabra adelante insertar
+daw or diw | eliminar una palabra 
+xp | intercambiar caracter
+yw copiar una palabra desde el incio del cursor
+. |repite el ultimo comando
+
+comandos con: :
+:w guardar
+:q cerrar 
+:wq guardar y cerrar
+:qa cierra todas las pestañas 
+:q! cerrar y no guardar
+:t.|duplicar una linea
+:t.2|duplicar una linea 
+
+para copiar:
+yiw| copia una palabra sin espacios
+yaw| copia una palabra con espacios
+y$ or Y | copia una linea hasta el final
+x| cortar una caracter
+yw copiar una palabra desde el incio del cursor
+y$| copia desde el cursor hasta la palabra final
+yt{|copia hasta el siguiente } lo mismo para los otros simbolos
+yi(| copia todo hasta el siguiente ) los mismo para los otros simbolos
+yy|copiar (yank) una línea
+2yy|copiar y eliminar dos una línea
+p |pegar despues del cursor:
+P - pegar después del cursor
+gp - put (paste) the clipboard after cursor and leave cursor after the new text
+gP - put (paste) before cursor and leave cursor after the new text
+
+para seleccionar:
+aw| selecciona palabra actual con espacios
+aw| selecciona palabra actual con espacios and puntuacion
+iw| selecciona palabra actual. sin espacios
+vt+ caracter| selecciona todo hasta el caracter especificado
+vt+ caracter + f+ caracter| selecciona, todo hasta el, caracter especificado
+v | seleccionar
+v | seleccionar por lineas
+vi" + c| "selecciona"la palabra y la elimina
+va" + c| "selecciona"la palabra y la elimina
+ciw + " + escape + p |para encerrar palabra entre "comilla"
+viw| selecciona una palara
+viwp| selecciona una palabra copia y elimina
+ctrl + v| ingresar al modo visual de bloque para seleccionar bloques de texto.
+vi{| selleciona hasta el siguiente } lo mismo para los otros simbolos
+viw| en una palabra la selecciona
+vip| selecciona todo un parrafo hasta el espacio
+shif v shif g selecciona todo el docuemnto 
+w| seleccionar la siguiente palabra.
+b| seleccionar la palabra anterior.
+e| seleccionar hasta el final de la palabra actual.
+gel seleccionar hasta el final de la palabra anterior.
+)| seleccionar la oración siguiente.
+(| seleccionar la oración anterior.
+}| seleccionar el párrafo siguiente.
+{| seleccionar el párrafo anterior.
+a" o i"| "seleccionar" el texto entre comillas dobles, incluyendo las comillas.
+a' o i'| seleccionar el texto entre comillas simples, incluyendo las comillas.
+a( o i(| seleccionar el texto entre paréntesis, incluyendo los paréntesis.
+a{ o i{| seleccionar el texto entre llaves, incluyendo las llaves.
+ab - un bloque con ()
+aB - un boque con {}
+at - un bloque con etiquetas <>
+ib - un bloque interno con ()
+iB - un bloque interno con {}
+it - bloque interior con etiquetas <>
+
+
+modo visual:
+> - mover texto hacia la derecha
+< - mover texto hacia la izquierda
+y - copiar texto seleccionado
+d - eliminar texto seleccionado
+~ - pasar de minúscula a mayúscula y viceversa
+u - cambiar el texto marcado a minúsculas
+U - cambiar el texto marcado a mayúsculas
+
+para insertar:
+i a i a o o: modo 
+ea| insertar al final
+shit s borra toda la linea y pone en modo insercion
+dwi | para eliminar partpalabra adelante insertar
+cc| elimina la linea y  pone en modo insertar
+ea| inserta al final de la palabra
+ciw| elimina la palabra y pone modo insertar
+caw| selecciona copia elimina inserta
+c | desde la posision actual hasta el final de la linea
+c2w| elimina dos palabras desde el cursor
+cw oe ce| elimina la palabra a partir del cursor y pasa modo insertar
+
+eliminar:
+c or c$ | desde la posision actual hasta el final de la linea
+d |eliminia hasta el final de la linea
+d$|eliminia hasta el final de la linea
+d2w| elimina la cantidad de  palabra establecida
+daw or diw | eliminar una palabra 
+diw| corta una palabra localizada en el cursor pero no sale del modo normal
+dw| corta una palabra hasta el principio de la siguiente
+dd| elimina una linea
+x| elimina y copia un caracter
+dw| elimina palabra desde el cursor en modo normal 
+cw oe ce| elimina la palabra a partir del cursor y pasa modo insertar
+3dd|elimina la catidad de lineas establecidas
+dae| elimina todo el texto del docuemnto
+:3,5d - delete lines starting from 3 to 5
+Tip You can also use the following characters to specify the range:
+e.g.
+:.,$d - From the current line to the end of the file
+:.,1d - From the current line to the beginning of the file
+:10,$d - From the 10th line to the beginning of the file
+cie elimina todo
+cae elimina tood
+
+para remplazar: 
+ciw| elimina palabra and insercion
+contr+ x|para disminuir un numero 
+contr+ a|para aumentar un numero 
+v+u| minuscula
+v+u| mayusculas
+guaw| cambiar la palabra a mayusculas
+guaw| cambiar la palabra a minuscula
+gue| cambia la palabra a mayuscula desde el cursor
+gue| cambia la palabra a minuscula desde el cursor
+gU |gu | cambiar a mayusculas o minuscula hasta el movimineto
+r| remplazar un caracter
+R| remplazar mas de un caracter
+j| junta las dos lineas
+gJ| une la linea de abajo sin espacio
+xp| intercambiar palabra
+v+< |v+>| or << | >>| sangria
+
+
+desplazamiento:
+k |moverte hacia arriba 
+j |moverte hacia abajo
+p |moverte hacia la izquierda 
+l |moverte hacia la derecha
+e |ir al final de la siguiente palabra
+w |ir al inicio de la siguiente palabra
+b |ir al inicio de la siguiente palabra
+0 |ir al inicio de la siguiente palabra
+$ |ir al final de la siguiente palabra
+% |ir a una llave abierta
+gg|ir al inicio de todo el texto
+5gg| ir a la linea 5
+g |al final de el todo el texto
+} |ir al incio de cada parrafo busca la linea basia
+{ |ir al final de cada parrafo busca la linea basia
+3j|ir tres lineas abajo
+3k|ir tres lineas arriba
+...ir hacia un caracter
+fx - saltar a la siguiente ocurrencia del carácter x
+tx - saltar a la ocurrencia previa del carácter x
+fx - saltar a la aparición anterior del carácter x
+tx - saltar a después de la aparición anterior del carácter x
+; - repetir el movimiento anterior de f, t, f o t
+, - repetir el movimiento anterior de f, t, f o t, hacia atrás
+
+resgistro:
+"xy - copiar en el registro X
+"xp - pegar el contenido del registro X
+"+y - copiar en el registro del portapapeles del sistema
+"+p - pegar desde el registro del portapapeles del sistema
+
+Macros
+qa - grabar macro a
+q - detener la grabación de la macro
+@a - ejecutar macro a
+@@ - re-ejecutar la última macro ejecutada
+echo("hola");
+echo("hola");
+echo("hola");
+
+
+Marcas
+:marks - mostrar marcas
+ma - definir posición actual para la marca A
+'a or `a - saltar a la posición de la marca A
+
+buscar 
+/ palabra  para buscar
+n palabra siguiente 
+shif n  palabra anterior
+
+multi culsor
+selelcionas con v y despues contr + d para ir seleccionado las palabras iguales y despues contr + i para insertar 
+
+.. funciones variables
+gd - saltar a la declaración local
+gd - saltar a la declaración global
