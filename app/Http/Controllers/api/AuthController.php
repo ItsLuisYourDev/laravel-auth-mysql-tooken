@@ -4,9 +4,11 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class AuthController extends Controller
 {
@@ -27,8 +29,27 @@ class AuthController extends Controller
             ], 401);
         }
 
-        // Crear un token para el usuario
-        $token = $user->createToken('API Token')->plainTextToken;
+            // Crear el token (sin usar plainTextToken aún)
+    $tokenResult = $user->createToken('API Token');
+
+    // Obtener el token plano (para enviar al cliente)
+    $plainTextToken = $tokenResult->plainTextToken;
+
+    // Buscar el token en la tabla 'personal_access_tokens' usando el ID del token recién creado
+    $token = PersonalAccessToken::findToken($plainTextToken);
+
+    // Verificar que el token fue encontrado
+    if ($token) {
+        // Establecer la fecha de expiración manualmente
+        $token->forceFill([
+            'expires_at' => Carbon::now()->addMinutes(15)  // Cambiar a la expiración que desees
+        ])->save();
+    }
+
+        // // Crear un token para el usuario
+        // $tokenResult = $user->createToken('API Token')->plainTextToken;
+        // $token = $user->currentAccessToken();
+        // echo($user);
 
         $role = $user->roles()->first(); // Esto devuelve el primer rol asociado
         if ($role) {
@@ -39,14 +60,14 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'user' => $user,
-                'token' => $token,
+                'token' => $plainTextToken,
                 'role' => null,
             ]);
         } else {
             return response()->json([
                 'success' => true,
                 'user' => $user,
-                'token' => $token,
+                'token' => $plainTextToken,
                 'role' => $role->name,
             ], 200);
         }

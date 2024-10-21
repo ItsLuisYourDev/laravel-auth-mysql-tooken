@@ -19,18 +19,30 @@ class ExtendSanctumToken
     public function handle(Request $request, Closure $next)
     {
         // Si el usuario está autenticado
-if (Auth::user()) {
-    // Obtén el token actual
-    $token = Auth::user()->currentAccessToken();
+          // Si el usuario está autenticado
+        if (Auth::user()) {
+            // Obtén el token actual
+            $token = Auth::user()->currentAccessToken();
 
-    // Verifica si el token es válido y si hay interacción reciente
-    if ($token) {
-        // Extiende el token otros 5 minutos
-        $token->forceFill([
-            'expires_at' => Carbon::now()->addMinutes(5)
-        ])->save();
-    }
-}
+            // Si hay un token, verificamos si ha expirado
+            if ($token) {
+                $expiresAt = Carbon::parse($token->expires_at);
+
+                // Si el token ya ha expirado, lo eliminamos
+                if ($expiresAt->isPast()) {
+                    $token->delete();
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Token ha expirado, por favor inicie sesión nuevamente'
+                    ], 401);
+                }
+
+                // Si el token aún es válido, extendemos su expiración
+                $token->forceFill([
+                    'expires_at' => Carbon::now()->addMinutes(5)
+                ])->save();
+            }
+        }
         return $next($request);
 
     }
